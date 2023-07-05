@@ -1,0 +1,231 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body bgcolor=#1ff0d0>
+
+    <center>
+
+        <div class="jumbotron">
+            <h1 class="display-4">RESULT</h1>
+            <hr class="my-4">
+            {%if data == 0%}
+            
+           <h1 style = "Color : red">Sorry!</h1>
+           <h3>You have less chances of getting placed</h3>
+     
+
+           {%else%}
+           <h1 style ="Color : GREEN">Congratulations!!!</h1>
+           <h3>You have high chances of getting placed</h3>
+    
+    
+           {%endif%}
+
+        <br><br>
+        <a href='/'>Go back to home page</a>
+        <br><br>
+       
+            <p class="lead">
+              
+            </p>
+          </div>
+
+    </center>
+    
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Information</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>ID</td>
+            <td>{{ data1 }}</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Gender</td>
+            <td>
+              {% if data2 =='0' %}
+                {% set data2_new = 'Female' %}
+              {% elif data2 == '1' %}
+                {% set data2_new = 'Male' %}
+              {% else %}
+                {% set data2_new = 'Not a valid response' %}
+              {% endif %}
+              
+              {{ data2_new }}
+              </td>
+        </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td>Class 10th Marks</td>
+            <td>{{data3}}</td>
+           
+          </tr>
+
+          <tr>
+            <th scope="row">4</th>
+            <td>Class 10th Boards</td>
+            <td>
+              {% if data4 =='0' %}
+                {% set data4_new = 'Central' %}
+              {% elif data4 == '1' %}
+                {% set data4_new = 'Other' %}
+              {% else %}
+                {% set data4_new = 'Not a valid response' %}
+              {% endif %}
+              
+              {{ data4_new }}
+
+            </td>
+           
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Class 12th Marks</td>
+            <td>{{data5}}</td>
+          
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Class 12th Boards</td>
+            <td>
+              {% if data6 =='0' %}
+                {% set data6_new = 'Central' %}
+              {% elif data6 == '1' %}
+                {% set data6_new = 'Other' %}
+              {% else %}
+                {% set data6_new = 'Not a valid response' %}
+              {% endif %}
+              
+              {{ data6_new }}
+              
+            </td>
+           
+          </tr>
+
+          <tr>
+            <th scope="row">7</th>
+            <td>Class 12th Subject/Stream</td>
+            <td>
+            {% if data7 =='0' %}
+              {% set data7_new = 'Commerce' %}
+            {% elif data7 == '1' %}
+              {% set data7_new = 'Science' %}
+            {% elif data7 == '2' %}
+              {% set data7_new = 'Arts' %}
+            {% else %}
+              {% set data7_new = 'Not a valid response' %}
+            {% endif %}
+            
+            {{ data7_new }}
+
+            </td>
+           
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Degree Percentage</td>
+            <td>{{data8}}</td>
+          
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>Degree Subject/Stream</td>
+            <td>
+
+            {% if data9 =='0' %}
+              {% set data9_new = 'Commerce and Management' %}
+            {% elif data9 == '1' %}
+              {% set data9_new = 'Other' %}
+            {% elif data9 == '2' %}
+              {% set data9_new = 'Science and Technology' %}
+            {% else %}
+              {% set data9_new = 'Not a valid response' %}
+            {% endif %}
+            
+            {{ data9_new }}
+                 
+
+            </td>
+           
+          </tr>
+
+          <tr>
+            <th scope="row">10</th>
+            <td>Work Experience</td>
+            <td>
+            {% if data10 =='0' %}
+              {% set data10_new = 'No' %}
+            {% elif data10 == '1' %}
+              {% set data10_new = 'Yes' %}
+            {% else %}
+              {% set data10_new = 'Not a valid response' %}
+            {% endif %}
+            
+            {{ data10_new }}
+
+            </td>
+           
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>AMCAT/Employblity Test Score</td>
+            <td>{{data11}}</td>
+          
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>MBA Specialisation</td>
+            <td>
+            {% if data12 =='0' %}
+              {% set data12_new = 'Finance and Marketing' %}
+            {% elif data12 == '1' %}
+              {% set data12_new = 'HR and Marketing' %}
+            {% else %}
+              {% set data12_new = 'Not a valid response' %}
+            {% endif %}
+            
+            {{data12_new}}
+            </td>
+           
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td>MBA Percentage</td>
+            <td>{{data13}}</td>
+           
+          </tr>
+
+          <tr>
+            <th scope="row">14</th>
+            <td>Salary</td>
+            <td>{{data14}}</td>
+           
+          </tr>
+
+          
+        </tbody>
+      </table>
+      
+
+  
+
+</body>
+
+</html>
+
+
+

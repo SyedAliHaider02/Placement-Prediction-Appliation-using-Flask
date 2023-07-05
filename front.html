@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kidney disease</title>
+    <style type="text/css">
+         h1{ font-size: 60px; 
+             text-align: center;
+             color: #e32037;
+             border: 5px solid black;
+             font-family: 'Impact';
+             }
+
+         body{
+         background-image:url(kidney1.jpg);
+         background-size:cover;
+  }
+
+        legend{font-size: 20px; 
+             text-align: center;}
+
+        
+        .note{color: #FF0000;}
+      
+
+    </style>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-4">PLACEMENT PREDICTION</h1>
+        <p class="lead">Just fill the given details and check your chances of gettting placed.</p>
+        <hr class="my-4">
+        <p>Fill the details.</p>
+        <p class="lead">
+            <form method="POST", action="{{url_for('home')}}">
+                <fieldset>
+                <br>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">id</span>
+                    </div>
+                    <input type ="number" name="id" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
+                    </div>
+                    <input  type ="number"  name="gender" min="0" max="1" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Class 10th Marks</span>
+                    </div>
+                    <input type ="number"  name="marks1" min="0" max="100" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Class 10th Boards</span>
+                    </div>
+                    <input type ="number" name="boards1" min="0" max="1" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Class 12th Marks</span>
+                    </div>
+                    <input type ="number"  name="marks2" min="0" max="100" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Class 12th Boards</span>
+                    </div>
+                    <input type ="number" name="boards2" min="0" max="1" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Class 12th Subject/Stream</span>
+                    </div>
+                    <input type ="number"  name="strm" min="0" max="2" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Degree Percentage</span>
+                    </div>
+                    <input type ="number"  name="deg_p" min="0" max="100" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Degree Subject/Stream</span>
+                    </div>
+                    <input type ="number"  name="deg_s" min="0" max="2" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Work Experience</span>
+                    </div>
+                    <input type ="number"  name="wrx" min="0" max="1" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">AMCAT/Employblity Test Score</span>
+                    </div>
+                    <input type ="number"  name="amcat" min="0" max="100" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Specialisation</span>
+                    </div>
+                    <input type ="number" name="sp" min="0" max="1" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">MBA Percentage</span>
+                    </div>
+                    <input type ="number" name="mba_p" min="0" max="100" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Salary</span>
+                    </div>
+                    <input type ="number" name="sal"class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+              
+              
+                <input type="submit" value ="predict!" class="btn btn-primary">
+                <a href="{{ url_for('home')}}"></a>
+                </fieldset>
+                </form>
+
+
+
+
+        </p>
+      </div>
+
+
+
+
+</body>
+</html>
